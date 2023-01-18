@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Darts App</string>
+    <string name="zero_one">01</string>
+    <string name="cricket">Cricket</string>
+    <string name="countup">Count Up</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="back_button">Back</string>
+    <string name = "three_zero_one">301</string>
+    <string name = "five_zero_one">501</string>
+    <string name = "seven_zero_one">701</string>
+    <string name = "nine_zero_one">901</string>
+    <string name = "one_one_zero_one">1101</string>
+    <string name = "one_three_zero_one">1301</string>
+    <string name = "gameon">GAME ON!!</string>
+</resources>
