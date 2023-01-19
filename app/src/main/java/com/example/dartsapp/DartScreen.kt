@@ -24,7 +24,7 @@ import com.example.dartsapp.data.DataSource.zeroOneModeOptions
 import com.example.dartsapp.ui.HomeScreen
 import com.example.dartsapp.ui.ModeScreen
 import com.example.dartsapp.ui.SettingScreen
-import com.example.dartsapp.ui.GamePlayScreen
+import com.example.dartsapp.ui.Game01Screen
 
 enum class DartScreen() {
     Homepage,
@@ -102,7 +102,7 @@ fun DartsApp(modifier: Modifier = Modifier) {
             }
 
             composable(route = DartScreen.Gameplay.name) {
-                GamePlayScreen()
+                Game01Screen()
             }
 
         }
