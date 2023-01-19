@@ -21,6 +21,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 import com.example.dartsapp.R
+import com.example.dartsapp.states.Ruleset01
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import java.security.AllPermission
 
 @Composable
@@ -33,27 +36,28 @@ fun SettingScreen(
     onGameOnButtonClicked: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
-    var bullOptions = listOf("25/50", "50/50")
-    var selectedBullOption by rememberSaveable() { mutableStateOf("") }
+    var bullOptions = listOf("50/50", "25/50")
+    var selectedBullOption by rememberSaveable() { mutableStateOf("50/50") }
 
     var inOptions = listOf("Open", "Double", "Triple", "Master")
-    var selectedInOption by rememberSaveable() { mutableStateOf("") }
-
-    var numberOfRoundsOptions = listOf("10", "15", "20", "25", "30", "No Limit")
-    var selectedNumberOfRoundsOption by rememberSaveable() { mutableStateOf("") }
-
-    var shanghaiOptions = listOf("Off", "On")
-    var selectedShanghaiOption by rememberSaveable() { mutableStateOf("") }
+    var selectedInOption by rememberSaveable() { mutableStateOf("Open") }
 
     var outOptions = listOf("Open", "Double", "Triple", "Master")
-    var selectedOutOption by rememberSaveable() { mutableStateOf("") }
+    var selectedOutOption by rememberSaveable() { mutableStateOf("Open") }
 
+    var numberOfRoundsOptions = listOf("10", "15", "20", "25", "30", "No Limit")
+    var selectedNumberOfRoundsOption by rememberSaveable() { mutableStateOf("15") }
+
+    var shanghaiOptions = listOf("Off", "On")
+    var selectedShanghaiOption by rememberSaveable() { mutableStateOf("Off") }
+
+    val ruleset01 = MutableStateFlow(Ruleset01()).asStateFlow()
 
     Row(modifier = modifier.padding(5.dp)) {
         Column(modifier = modifier.padding(16.dp, 10.dp, 16.dp).weight(2f)) {
 
             //bullsettings
-            Text("Bull")
+            Text("Bull Option")
             bullOptions.forEach { item ->
                 Row (
                     modifier = Modifier.selectable(
